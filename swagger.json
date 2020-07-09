@@ -1,0 +1,117 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is an implementation of cache",
+    "version": "1.0.0",
+    "title": "Swagger Cache",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "vandanapalahia@gmail.com"
+    }
+  },
+  "host": "localhost:9091",
+  "tags": [
+    {
+      "name": "cache",
+      "description": "reads and write into cache with persistence backup from postgres database"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/cache/insert": {
+      "post": {
+        "tags": [
+          "cache"
+        ],
+        "summary": "Add a new record in cache",
+        "description": "Endpoint is used to insert data in cache",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "sample data to insert in cache",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Inserted Successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cache/fetch": {
+      "get": {
+        "tags": [
+          "cache"
+        ],
+        "summary": "Fetches the records from cache",
+        "description": "Endpoint is used to fetch existing records from cache",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "required": false,
+            "description": "Numeric ID of the limit"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "required": false,
+            "description": "Numeric ID of the offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Task"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Rquest"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Task": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int"
+        },
+        "task": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

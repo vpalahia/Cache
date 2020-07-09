@@ -1,0 +1,51 @@
+
+version: '3'
+services:
+  goserver:
+    container_name: server
+    build: .
+    ports: 
+      - 9091:9091 
+    restart: on-failure
+    volumes:
+      - api:/usr/src/app/
+    depends_on:
+      - database
+      - rabbitmq          
+    networks:
+      - nokia
+
+  database:
+    image: "postgres" 
+    container_name: postgresql
+    environment:
+      - POSTGRES_USER='postgres'
+      - POSTGRES_PASSWORD='password123'
+      - POSTGRES_DB='todo'
+    ports:
+      - "5432:5432"
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    networks:
+      - nokia
+    
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: queue
+    volumes:
+        - rabbit1:/var/lib/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - nokia
+volumes:
+  api:
+  database-data:
+  rabbit1:
+    driver: local
+ 
+# Networks to be created to facilitate communication between containers
+networks:
+  nokia:
+    driver: bridge

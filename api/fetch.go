@@ -5,8 +5,8 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/vpalahia/Cache-Nokia/cache"
-	"github.com/vpalahia/Cache-Nokia/types"
+	"github.com/vpalahia/Cache/cache"
+	"github.com/vpalahia/Cache/types"
 )
 
 func Fetch(c *gin.Context) {

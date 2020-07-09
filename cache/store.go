@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"github.com/vpalahia/Cache-Nokia/db"
-	"github.com/vpalahia/Cache-Nokia/types"
+	"github.com/vpalahia/Cache/db"
+	"github.com/vpalahia/Cache/types"
 )
 
 type cache struct {

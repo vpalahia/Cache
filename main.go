@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
-	"github.com/vpalahia/Cache-Nokia/api"
-	"github.com/vpalahia/Cache-Nokia/cache"
+	"github.com/vpalahia/Cache/api"
+	"github.com/vpalahia/Cache/cache"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 
-	"github.com/vpalahia/Cache-Nokia/types"
+	"github.com/vpalahia/Cache/types"
 )
 
 func InsertIntoDB(todoitem types.Todo) error {

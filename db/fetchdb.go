@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/streadway/amqp"
-	"github.com/vpalahia/Cache-Nokia/types"
+	"github.com/vpalahia/Cache/types"
 )
 
 func FetchFromDB(conn *amqp.Connection) error {

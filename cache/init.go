@@ -12,9 +12,7 @@ var conn *amqp.Connection
 func init() {
 	var err error
 
-	// conn, err = amqp.Dial("amqp://guest:guest@172.20.0.1:5672/")
 	conn, err = amqp.Dial("amqp://guest:guest@192.168.99.100:5672/")
-
 	if err != nil {
 		log.Fatalf("could not connect to rabbitmq: %v", err)
 	}

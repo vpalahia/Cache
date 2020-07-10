@@ -3,6 +3,7 @@ An implementation of cache, postgres and rabbitmq
 
 The project is meant to be deployed on docker container using docker-compose.
 
+Steps to run and test the service.
 1. Clone the repository.
 2. Go inside the Cache folder (Run 'cd Cache').
 3. Run 'docker-compose up' command.

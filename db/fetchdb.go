@@ -8,6 +8,7 @@ import (
 	"github.com/vpalahia/Cache/types"
 )
 
+//FetchFromDB function to fetch data from database
 func FetchFromDB(conn *amqp.Connection) error {
 	var todoList []types.Todo
 

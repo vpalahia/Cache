@@ -19,9 +19,9 @@ services:
     image: "postgres" 
     container_name: postgresql
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password123
-      - POSTGRES_DB=todo
+      - POSTGRES_USER='postgres'
+      - POSTGRES_PASSWORD='password123'
+      - POSTGRES_DB='todo'
     ports:
       - "5432:5432"
     volumes:
@@ -45,7 +45,10 @@ volumes:
   rabbit1:
     driver: local
  
-# Networks to be created to facilitate communication between containers
 networks:
   nokia:
     driver: bridge
+    ipam:
+      driver: default
+      config: 
+        - subnet: 172.16.1.0/24

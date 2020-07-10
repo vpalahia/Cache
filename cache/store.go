@@ -9,6 +9,7 @@ type cache struct {
 	TodoItems types.TodoMap
 }
 
+//Cache Local cahce which can be imported into some other package
 var Cache = cache{
 	TodoItems: types.TodoMap{},
 }
@@ -21,6 +22,7 @@ func updateCache(todoArr []types.Todo) {
 	Cache.TodoItems = ma
 }
 
+//InsertIntoCache function to insert data in cache
 func InsertIntoCache(todo types.Todo) {
 	todo.Id = len(Cache.TodoItems) + 1
 

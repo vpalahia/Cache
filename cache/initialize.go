@@ -10,6 +10,7 @@ import (
 	"github.com/vpalahia/Cache/types"
 )
 
+//InitializeCache function to initialize cache on server startup
 func InitializeCache() {
 
 	err := db.FetchFromDB(conn)

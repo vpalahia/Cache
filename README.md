@@ -4,7 +4,7 @@ An implementation of cache, postgres and rabbitmq
 The project is meant to be deployed on docker container using docker-compose.
 
 1. Clone the repository.
-2. Go inside the Cache folder (run 'cd Cache').
+2. Go inside the Cache folder (Run 'cd Cache').
 3. Run 'docker-compose up' command.
 4. Three (go server, postgres & rabbitmq) docker containers will be deployed all together.
 5. The endpoints can be accessed on http://localhost:9091/ .(unless docker toolbox is being used)

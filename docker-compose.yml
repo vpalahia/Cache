@@ -5,7 +5,7 @@ services:
     container_name: server
     image: "appyme/cache:latest"
     ports: 
-      - 9091:9091 
+      - 80:9091 
     restart: on-failure
     volumes:
       - api:/usr/src/app/

@@ -3,7 +3,7 @@ version: '3'
 services:
   goserver:
     container_name: server
-    build: .
+    image: "appyme/cache:latest"
     ports: 
       - 9091:9091 
     restart: on-failure
